@@ -28,9 +28,7 @@
 	            					</td>
 	            					<td>
 	            						Reference: <span t-field="o.ref"/>
-										<br/>
-										Aljuan number: <span t-field="o.account_move_sequence"/>
-	            					</td>
+										
 	            				</tr>
 	            			</table>                	
                 	</div>
