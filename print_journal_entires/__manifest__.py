@@ -1,3 +1,6 @@
+
+
+
 {
     'name': 'Print Journal Entries',
     'version': '1.0',
@@ -6,8 +9,8 @@
     'description': """
     this module use for print journal Entries in PDF report"
     """,
-    'author': "Eng. Ahmed Sherby",
-    'website': "http://egypt4is.com",
+    'author': "HAK Sol",
+    'website': "http://haksolutions.com",
     'depends': ['account'],
     'license': 'AGPL-3',
     'data': [

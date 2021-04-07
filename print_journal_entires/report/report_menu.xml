@@ -3,6 +3,7 @@
 	<template id="journal_entries_report_id">
         <t t-call="web.html_container">
 		<t t-call="web.external_layout">
+<!--			<link rel='stylesheet' href="/journal_entries_print/static/src/css/report_css.css"/>-->
             <t t-foreach="docs" t-as="o">
                 <div class="page" style="font-size:15px;">
                 <div>
@@ -27,8 +28,6 @@
 	            					</td>
 	            					<td>
 	            						Reference: <span t-field="o.ref"/>
-										<br/>
-										Aljuan number: <span t-field="o.account_move_sequence"/>
 	            					</td>
 	            				</tr>
 	            			</table>                	
@@ -39,11 +38,6 @@
                         text-align: center;
                         border: 2px solid black;
                     }
-
-                     .tr-border {
-                        border: 0px solid black;
-                    }
-
 						.total {
                         text-align: center;
                         border: 2px solid black;
@@ -52,10 +46,9 @@
                     </style>
 						<br></br>
                 		<table width="100%" class="border-collapse:separate;">
-                			<thead>
+                			<thead >
                 				<tr >
                 					<th>رقم الحساب</th>
-
 
                 					<th>الشـــــــــــــــرح</th>
 
@@ -69,11 +62,14 @@
                 				 		<td>
                 				 			<span t-field="line.account_id.code"/>
                 				 		</td>
-										<td>
-                				 			<span t-field="line.account_id.name"/>    -  <span t-field="line.partner_id.name"/>
-											<br/> <span t-field="line.name"/>
-                				 		</td>
 
+                				 		<td>
+											<span t-field="line.account_id.name"/>
+											<br></br>
+                				 			<span t-field="line.partner_id.name"/>
+											<br></br>
+											<span t-field="line.name"/>
+                				 		</td>
 
 
                 				 		<td>
@@ -91,10 +87,10 @@
                 				<tr class="total">
 									<td colspan="2">الإجمالـــــــــي</td>
                 					<td>
-                						<span t-esc="round(o.total_debit_credit().get('dr_total'),2)"/>
+                						<span t-esc="o.total_debit_credit().get('dr_total')"/>
                 					</td>
                 					<td>
-                						<span t-esc="round(o.total_debit_credit().get('cr_total'),2)"/>
+                						<span t-esc="o.total_debit_credit().get('cr_total')"/>
                 					</td>
                 				</tr>
                 			</tfooter>
@@ -111,7 +107,7 @@
         model = "account.move"
         string = "Journal Entries"
         report_type = "qweb-pdf"
-        name = "sherby_print_journal_entires.journal_entries_report_id"
-        file = "sherby_print_journal_entires.journal_entries_report_id"
+        name = "print_journal_entires.journal_entries_report_id"
+        file = "print_journal_entires.journal_entries_report_id"
     />
 </odoo>
