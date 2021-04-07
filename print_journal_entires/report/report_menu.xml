@@ -29,6 +29,7 @@
 	            					<td>
 	            						Reference: <span t-field="o.ref"/>
 										
+	            					</td>
 	            				</tr>
 	            			</table>                	
                 	</div>
